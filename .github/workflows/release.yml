@@ -24,7 +24,7 @@ jobs:
          export PSACC_VERSION=$(git describe --tags --abbrev=0)
          poetry version ${PSACC_VERSION}
          poetry build
-         poetry publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
+         #poetry publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
          mv dist/psa_car_controller-${PSACC_VERSION:1}-py3-none-any.whl dist/psa_car_controller-0.0.0-py3-none-any.whl
      - uses: actions/upload-artifact@master
        with:
